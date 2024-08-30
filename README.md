@@ -51,10 +51,16 @@ Before you get started, there are a few dependencies that need to be fulfilled i
   - [system.links.prop](./bootstrap/system.links.prop): Installs dotfiles system wide
 </details>
 
+Use this command to quickly setup dependencies and a sudo user on arch.
+
+```bash
+bash <(curl -s https://raw.githubusercontent.com/asadkhan98/dotfiles/main/bin/wsl-arch.sh)
+```
+
 Once the dependencies are met, you can clone the repository to your desired location and launch [~/.bootstrap.sh](bootstrap.sh) to install the dotfiles.
 
 ```bash
-cd && git clone --depth 1 https://github.com/CodecoLabs/dotfiles ".dotfiles" && cd .dotfiles
+cd && git clone --depth 1 https://github.com/asadkhan98/dotfiles ".dotfiles" && cd .dotfiles
 ```
 
 Run [~/.bootstrap.sh](bootstrap.sh) with `./bootstrap.sh` or `bash bootstrap.sh`
