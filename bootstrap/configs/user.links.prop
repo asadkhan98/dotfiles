@@ -1,4 +1,4 @@
-${DOTFILES}/.config/zsh/=$HOME/.config/
+${DOTFILES}/.config/zsh/=$HOME/.config/zsh/
 ${DOTFILES}/.config/zsh/.zshenv=$HOME/.zshenv
 ${DOTFILES}/.config/bash/.bashrc=$HOME/.bashrc
 ${DOTFILES}/.config/btop/btop.conf=$HOME/.config/btop/btop.conf
