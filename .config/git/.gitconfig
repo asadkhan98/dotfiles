@@ -1,6 +1,8 @@
 [user]
 	name = Asad Khan
 	email = 179787850+asadkhan98@users.noreply.github.com
+[default]
+	branch = main
 [core]
 	editor = code
 	ignorecase = false

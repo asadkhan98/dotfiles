@@ -108,7 +108,6 @@ alias ..='cd ..; ls'
 alias ..=' cd ..; ls'
 alias ...=' cd ..; cd ..; ls'
 alias ....=' cd ..; cd ..; cd ..; ls'
-alias src='source ${ZDOTDIR}/.zshrc'
 alias zshrc='${=EDITOR} ${ZDOTDIR}/.zshrc'
 alias m='micro'
 alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS}'
@@ -212,9 +211,9 @@ alias parucac='paru -Sc'
 
 source ${ZDOTDIR}/themes/starship.zsh
 source ${ZDOTDIR}/functions.zsh
-source ${ZDOTDIR}/plugins/zsh-autosuggestions/zsh-autosugesstions.plugin.zsh
+source ${ZDOTDIR}/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 source ${ZDOTDIR}/plugins/zsh-completions/zsh-completions.plugin.zsh
-source ${ZDOTDIR}/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting/plugin.zsh
+source ${ZDOTDIR}/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 source ${ZDOTDIR}/plugins/colored-man-pages.plugin.zsh
 source ${ZDOTDIR}/plugins/command-not-found.plugin.zsh
 source ${ZDOTDIR}/plugins/dirhistory.plugin.zsh
