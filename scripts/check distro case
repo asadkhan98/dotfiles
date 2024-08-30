@@ -1,0 +1,79 @@
+LFILE="/etc/*-release"
+MFILE="/System/Library/CoreServices/SystemVersion.plist"
+if [[ -f $LFILE ]]; then
+  _distro=$(awk '/^ID=/' /etc/*-release | awk -F'=' '{ print tolower($2) }')
+elif [[ -f $MFILE ]]; then
+  _distro="macos"
+fi
+
+case $_distro in
+    *kali*)
+        echo "KALI BABY"
+        ;;
+    *arch*)
+        echo "ARCH BABY"
+        ;;
+    *debian*)
+        echo "DEBIANSSS"
+        ;;
+    *raspbian*)
+        echo ""
+        ;;
+    *ubuntu*)
+        echo ""
+        ;;
+    *elementary*)
+        echo ""
+        ;;
+    *fedora*)
+        echo ""
+        ;;
+    *coreos*)
+        echo ""
+        ;;
+    *gentoo*)
+        echo ""
+        ;;
+    *mageia*)
+        echo ""
+        ;;
+    *centos*)
+        echo ""
+        ;;
+    *opensuse*|*tumbleweed*)
+        echo ""
+        ;;
+    *sabayon*)
+        echo ""
+        ;;
+    *slackware*)
+        echo ""
+        ;;
+    *linuxmint*)
+        echo ""
+        ;;
+    *alpine*)
+        echo ""
+        ;;
+    *aosc*)
+        echo ""
+        ;;
+    *nixos*)
+        echo ""
+        ;;
+    *devuan*)
+        echo ""
+        ;;
+    *manjaro*)
+        echo ""
+        ;;
+    *rhel*)
+        echo ""
+        ;;
+    *macos*)
+        echo "MAC"
+        ;;
+    *)
+        echo "I DONT KNOW!"
+        ;;
+esac

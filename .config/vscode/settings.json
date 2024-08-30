@@ -1,0 +1,33 @@
+{
+    "explorer.confirmDelete": false,
+    "workbench.iconTheme": "vscode-icons",
+    "editor.guides.bracketPairs": true,
+    "files.autoSave": "afterDelay",
+    "vsicons.dontShowNewVersionMessage": true,
+    "editor.accessibilitySupport": "off",
+    "workbench.sideBar.location": "right",
+    "editor.codeLensFontFamily": "'MesloLGM NF', 'SpaceMono NF', FontAwesome",
+    "editor.inlayHints.fontFamily": "'MesloLGM NF', 'SpaceMono NF', FontAwesome",
+    "notebook.outputFontFamily": "",
+    "terminal.integrated.fontFamily": "'MesloLGM NF', 'SpaceMono NF', FontAwesome",
+    "better-comments.highlightPlainText": true,
+    "cSpell.caseSensitive": true,
+    "color-highlight.matchRgbWithNoFunction": true,
+    "color-highlight.matchWords": true,
+    "prettier.bracketSameLine": true,
+    "window.menuBarVisibility": "toggle",
+    "editor.cursorBlinking": "smooth",
+    "shellcheck.exclude": [
+        "1017"
+    ],
+    "editor.fontFamily": "'MesloLGM NF', 'SpaceMono NF', FontAwesome",
+    "explorer.confirmDragAndDrop": false,
+    "window.zoomLevel": 0.75,
+    "workbench.colorTheme": "Dracula Clean",
+    "git.ignoreMissingGitWarning": true,
+    "workbench.editorAssociations": {
+        "*.db": "sqlite-viewer.option"
+    },
+    "editor.linkedEditing": true,
+    "editor.wordWrap": "on"
+}

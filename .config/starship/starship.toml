@@ -1,0 +1,249 @@
+# ███████╗████████╗ █████╗ ██████╗ ███████╗██╗  ██╗██╗██████╗
+# ██╔════╝╚══██╔══╝██╔══██╗██╔══██╗██╔════╝██║  ██║██║██╔══██╗
+# ███████╗   ██║   ███████║██████╔╝███████╗███████║██║██████╔╝
+# ╚════██║   ██║   ██╔══██║██╔══██╗╚════██║██╔══██║██║██╔═══╝
+# ███████║   ██║   ██║  ██║██║  ██║███████║██║  ██║██║██║
+# ╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═╝╚═╝
+
+# Inserts a blank line between shell prompts
+add_newline = false
+
+# Change command timeout from 500 to 1000 ms
+command_timeout = 1000
+
+#     ______                           __
+#    / ____/___  _________ ___  ____ _/ /_
+#   / /_  / __ \/ ___/ __ `__ \/ __ `/ __/
+#  / __/ / /_/ / /  / / / / / / /_/ / /_
+# /_/    \____/_/  /_/ /_/ /_/\__,_/\__/
+
+format = """
+[╭╼](8)[](0)$os$hostname$shell$username$sudo[](fg:0 bg:6)$directory[](fg:6 bg:0)$git_branch$git_commit$git_state$git_metrics$git_status[]\
+(fg:0)$fill[](0)$cmd_duration$jobs$battery$memory_usage$localip[](fg:0 bg:8)$time[](fg:8 bg:none)$line_break[╰╼](8)$character"""
+
+# Connecter between shell and sudo in the left prompt line 1
+# [⟠](bg:0 fg:8)\
+
+[fill]
+symbol = "—"
+
+#      __         ______     ____                             __
+#     / /   ___  / __/ /_   / __ \_________  ____ ___  ____  / /_
+#    / /   / _ \/ /_/ __/  / /_/ / ___/ __ \/ __ `__ \/ __ \/ __/
+#   / /___/  __/ __/ /_   / ____/ /  / /_/ / / / / / / /_/ / /_
+#  /_____/\___/_/  \__/  /_/   /_/   \____/_/ /_/ /_/ .___/\__/
+#                                                  /_/
+
+# Line 1
+[os]
+disabled = false
+format = "[$symbol](bg:0 fg:6)"
+[os.symbols]
+Alpine = " "
+Amazon = " "
+Android = " "
+Arch = " "
+CentOS = " "
+Debian = " "
+DragonFly = "🐉 "
+Emscripten = "🔗 "
+EndeavourOS = " "
+Fedora = " "
+FreeBSD = " "
+Garuda = "🦅 "
+Gentoo = " "
+HardenedBSD = "🛡️ "
+Illumos = " "
+Linux = " "
+Macos = " "
+Manjaro = " "
+Mariner = "🌊 "
+MidnightBSD = "🌘 "
+Mint = " "
+NetBSD = "🚩 "
+NixOS = " "
+OpenBSD = "🐡 "
+openSUSE = " "
+OracleLinux = "🦴 "
+Pop = " "
+Raspbian = " "
+Redhat = " "
+RedHatEnterprise = " "
+Redox = "🧪 "
+Solus = " "
+SUSE = " "
+Ubuntu = " "
+Unknown = " "
+Windows = " "
+
+[shell]
+disabled= false
+style = "bg:0 fg:6 blink"
+format = '[$indicator]($style)'
+powershell_indicator = " "
+bash_indicator = " "
+fish_indicator = " "
+zsh_indicator = " "
+cmd_indicator = " "
+
+[hostname]
+disabled = false
+ssh_symbol = " "
+ssh_only = false
+style = "bg:0 fg:4 bold italic"
+format = "[ $ssh_symbol$hostname ]($style)"
+
+[sudo]
+disabled = false
+allow_windows = true
+style = 'bg:0 fg:2'
+format = "[$symbol]($style)"
+symbol = ' '
+
+[username]
+disabled = false
+style_user = "bg:0 fg:5 bold"
+style_root = "bg:0 fg:1 bold"
+format = "[ $user ]($style)"
+show_always = true
+
+[directory]
+disabled = false
+read_only = "  "
+read_only_style = "bg:6 fg:1"
+truncation_length = 3
+truncation_symbol = "…/"
+style = "bg:6 fg:0 bold"
+format = "[ $path]($style)[$read_only]($read_only_style)"
+home_symbol = " ~"
+[directory.substitutions]
+"Documents" = " "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+".dotfiles" = " "
+"github" = " "
+
+[git_branch]
+disabled = false
+symbol = " "
+format = "[ $symbol$branch ]($style)"
+style = "bg:0 fg:2 bold"
+truncation_length = 6
+truncation_symbol = "⋯/"
+only_attached = false
+
+[git_commit]
+disabled = false
+commit_hash_length = 7
+tag_symbol = "🔖"
+tag_disabled = false
+only_detached = false
+style = "bg:0 fg:5"
+format = "[($hash$tag)]($style)"
+
+[git_state]
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+style = "bg:1 fg:8"
+
+[git_metrics]
+disabled = true
+added_style = "bg:0 fg:2 bold"
+deleted_style = "bg:0 fg:1 bold"
+only_nonzero_diffs = false
+format = '[ +$added]($added_style)[ -$deleted]($deleted_style)'
+
+[git_status]
+disabled = false
+format = '([$all_status$ahead_behind]($style))'
+style = "bg:0 fg:6 bold"
+conflicted = " 🏳"
+up_to_date = ""
+untracked = " ?"
+ahead = " ⇡${count}"
+diverged = " ⇕⇡${ahead_count}⇣${behind_count}"
+behind = " ⇣${count}"
+stashed = " $"
+modified = " !"
+staged = '[ +\($count\)](bg:0 fg:2)'
+renamed = " »"
+deleted = " ✘"
+windows_starship = '/mnt/c/Program Files/starship/bin/starship.exe'
+
+## Line 2
+[character]
+disabled = false
+success_symbol = "[](2)"
+error_symbol = "[](1)"
+vicmd_symbol = "[❮](2)"
+vimcmd_replace_one_symbol = "[❮](5)"
+vimcmd_replace_symbol = "[❮](5)"
+vimcmd_visual_symbol = "[❮](3)"
+
+#      ____  _       __    __     ____                             __
+#     / __ \(_)___ _/ /_  / /_   / __ \_________  ____ ___  ____  / /_
+#    / /_/ / / __ `/ __ \/ __/  / /_/ / ___/ __ \/ __ `__ \/ __ \/ __/
+#   / _, _/ / /_/ / / / / /_   / ____/ /  / /_/ / / / / / / /_/ / /_
+#  /_/ |_/_/\__, /_/ /_/\__/  /_/   /_/   \____/_/ /_/ /_/ .___/\__/
+#          /____/                                       /_/
+
+# Line 1
+[cmd_duration]
+disabled = false
+min_time = 2000
+min_time_to_notify = 45000
+show_milliseconds = false
+show_notifications = true
+style = "bg:0 fg:3"
+format = '[✫ $duration ]($style)'
+
+[jobs]
+disabled = false
+symbol = ""
+style = "bg:0 fg:1 bold"
+symbol_threshold = 1
+number_threshold = 2
+format = "[$symbol$number]($style)"
+
+[battery]
+disabled = false
+full_symbol = '🔋'
+charging_symbol = '⚡️ '
+discharging_symbol = '💀'
+unknown_symbol = "❓"
+empty_symbol = "🪫 "
+format = '[$symbol $percentage](bg:0 fg:$style)'
+[[battery.display]]
+threshold = 15
+style = '1 bold blink'
+[[battery.display]]
+threshold = 25
+style = '1 bold'
+[[battery.display]]
+threshold = 50
+style = '3 bold'
+[[battery.display]]
+threshold = 75
+style = '2 bold'
+[[battery.display]]
+threshold = 100
+style = '10 bold'
+
+[memory_usage]
+disabled = false
+symbol = " "
+threshold = 0
+style = "bg:0 fg:12"
+format = "[ $symbol$ram]($style)"
+
+[localip]
+disabled = false
+ssh_only = false
+format = '[  $localipv4](bg:0 fg:9 bold)'
+
+[time]
+disabled = false
+time_format = "%T"
+style = "bg:8 fg:7"
+format = "[  $time ]($style)"
+use_12hr = true

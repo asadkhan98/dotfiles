@@ -1,0 +1,14 @@
+[url "https://github.com/"]
+        insteadOf = gh:
+[url "git@github.com:"]
+        pushInsteadOf = "gh:"
+
+[url "https://gitlab.com/"]
+        insteadOf = gl:
+[url "git@github.com:"]
+        pushInsteadOf = "gl:"
+
+[url "https://aur.archlinux.org/"]
+        insteadOf = aur:
+[url "git@github.com:"]
+        pushInsteadOf = "aur:"

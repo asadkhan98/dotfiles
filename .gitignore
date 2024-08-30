@@ -1,0 +1,5 @@
+# Cross Platform Bootstrap files to ignore.
+
+/bootstrap/logs/*
+/bootstrap/configs/bootstrap.conf
+/.config/zsh/.zcompdump

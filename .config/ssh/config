@@ -1,0 +1,7 @@
+Host rpi
+    Hostname 192.168.1.20
+    User pi
+    Port 22
+    RemoteCommand tmux
+    RequestTTY yes
+    IdentityFile ~/.ssh/id_RPi

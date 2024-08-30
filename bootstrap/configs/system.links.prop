@@ -1,0 +1,16 @@
+${DOTFILES}/.config/zsh/=$HOME/.config/
+${DOTFILES}/.config/zsh/.zshenv=$HOME/.zshenv
+${DOTFILES}/.config/bash/.bashrc=$HOME/.bashrc
+${DOTFILES}/.config/btop/btop.conf=$HOME/.config/btop/btop.conf
+${DOTFILES}/.config/fastfetch/config.jsonc=$HOME/.config/fastfetch/config.jsonc
+${DOTFILES}/.config/htop/htoprc=$HOME/.config/htop/htoprc
+${DOTFILES}/.config/lf/cleaner=$HOME/.config/lf/cleaner
+${DOTFILES}/.config/lf/LF_ICONS=$HOME/.config/lf/LF_ICONS
+${DOTFILES}/.config/lf/lfrc=$HOME/.config/lf/lfrc
+${DOTFILES}/.config/lf/preview=$HOME/.config/lf/preview
+${DOTFILES}/.config/micro/settings.json=$HOME/.config/micro/settings.json
+${DOTFILES}/.config/micro/bindings.json=$HOME/.config/micro/bindings.json
+${DOTFILES}/.config/neofetch/config.conf=$HOME/.config/neofetch/config.conf
+${DOTFILES}/.config/starship/starship.toml=$HOME/.config/starship.toml
+${DOTFILES}/.config/tmux/tmux.conf=$HOME/.config/tmux/tmux.conf
+${DOTFILES}/.config/tmux/tmux.conf.local=$HOME/.config/tmux/tmux.conf.local
