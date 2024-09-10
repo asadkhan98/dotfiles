@@ -40,10 +40,7 @@ select_option $? 1 "${options[@]}"
 case $? in
 0) set_option mainproc dependencies
     echo -ne "Setting up Dependencies"
-    curl -fsSL https://raw.githubusercontent.com/asadkhan98/dotfiles/main/bootstrap/scripts/dependencies.sh | sh
-#    bash <(curl -s https://raw.githubusercontent.com/asadkhan98/dotfiles/main/bootstrap/scripts/dependencies.sh)
-    echo -ne "Dependencies installed"
-    mainproc
+    bash <(curl -s https://raw.githubusercontent.com/asadkhan98/dotfiles/main/bootstrap/scripts/dependencies.sh)
     ;;
 1) set_option mainproc wsl
     echo -ne "WSL"
