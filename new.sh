@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 set -a
 SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
@@ -12,8 +12,6 @@ CONFIG_FILE=$CONFIGS_DIR/bootstrap.conf
 if [ ! -f "$CONFIG_FILE" ]; then # check if file exists
     touch -f "$CONFIG_FILE" # create file if not exists
 fi
-
-STRAP_COLOR="#1ee1c8"
 
 #  _______           _        _______ __________________ _______  _        _______
 # (  ____ \|\     /|( (    /|(  ____ \\__   __/\__   __/(  ___  )( (    /|(  ____ \
@@ -42,7 +40,7 @@ select_option $? 1 "${options[@]}"
 case $? in
 0) set_option mainproc dependencies
     echo -ne "Setting up Dependencies"
-    bash <(curl -s https://raw.githubusercontent.com/asadkhan98/dotfiles/main/bootstrap/scripts/dependencies.sh)
+    curl -fsSL https://raw.githubusercontent.com/asadkhan98/dotfiles/main/bootstrap/scripts/dependencies.sh | sh
     echo -ne "Dependencies installed"
     mainproc
     ;;
@@ -60,9 +58,6 @@ esac
 
 }
 
-dotfilesInstall() {
-    ( bash "$SCRIPT_DIR"/dots.sh )|& tee "$LOGS_DIR"/dots.log
-}
 
 # Renders a text based list of options that can be selected by the
 # user using up, down and enter keys and returns the chosen option.
