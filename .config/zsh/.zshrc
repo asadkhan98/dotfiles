@@ -167,6 +167,7 @@ alias ta='tmux attach'
 alias tas='tmux attach -t'
 alias tlsk='tmux list-keys'
 alias ti='tmux info'
+alias td='tmux detach'
 
 # GIT
 alias glr='~/.local/bin/convert-gitlab-ssh.sh'
@@ -208,7 +209,7 @@ alias parus='paru -Si'
 alias parucac='paru -Sc'
 
 
-
+#source ${ZDOTDIT}/themes/catppuccin_mocha-zsh-syntax-highlighting.zsh
 source ${ZDOTDIR}/themes/starship.zsh
 source ${ZDOTDIR}/functions.zsh
 source ${ZDOTDIR}/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh

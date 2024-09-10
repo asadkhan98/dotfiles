@@ -1,0 +1,1 @@
+/home/AK/.dotfiles/.config/zsh/themes/catppuccin_mocha-zsh-syntax-highlighting.zsh
