@@ -34,19 +34,22 @@ mainproc () {
 =========================================================================================================
                                      What Would You Like To Setup?                                       
 ========================================================================================================="
-options=("dependencies" "wsl" "dotfiles" "exit")
+options=("dependencies" "dotfiles" "wsl" "exit")
 select_option $? 1 "${options[@]}"
 
 case $? in
 0) set_option mainproc dependencies
     echo -ne "Setting up Dependencies"
     bash <(curl -s https://raw.githubusercontent.com/asadkhan98/dotfiles/main/bootstrap/scripts/dependencies.sh)
+    mainproc
     ;;
-1) set_option mainproc wsl
-    echo -ne "WSL"
-    ;;
-2) set_option mainproc dotfiles
+1) set_option mainproc dotfiles
     echo -ne "Dotfiles"
+    bash <(curl -s https://raw.githubusercontent.com/asadkhan98/dotfiles/main/bootstrap/scripts/dotfiles.sh)
+    ;;
+2) set_option mainproc WSL
+    echo -ne "WSL"
+    bash <(curl -s https://raw.githubusercontent.com/asadkhan98/dotfiles/main/bootstrap/scripts/wsl.sh)
     ;;
 3) exit 
     echo -ne "Exiting script"
